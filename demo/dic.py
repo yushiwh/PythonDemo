@@ -12,6 +12,10 @@ print(alien)
 del alien['ok']
 print(alien)
 
+
+
+
+
 for key, value in alien.items():
     print("\nKey:" + key)
     print("Value:" + value)
