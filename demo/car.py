@@ -1,3 +1,6 @@
+"""一个可用于标识汽车的类"""
+
+
 class Car():
     """一次模拟汽车的简单的测试"""
 
@@ -44,10 +47,23 @@ class EletricCar(Car):
         print("电瓶的容量是:" + str(self.battery_size))
 
 
-"""进行调用"""
-my_new_car = Car('audi', 'A4', '2016')
-print("我的新车是---->" + my_new_car.get_descriptive_name())
+class Battery():
+    """模拟一次电动车电瓶的尝试"""
 
-my_tesla = EletricCar('Tesla', 'model_s', 2016)
-print(my_tesla.get_descriptive_name())
-my_tesla.describe_battery()
+    def __init__(self, battery_size=60):
+        """初始化电瓶的属性"""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """打印一条描述电瓶容量的消息"""
+        print("这是描述电瓶-->" + str(self.battery_size) + "的信息")
+
+    def get_range(self):
+        """打印一条描述电瓶续航里程的消息"""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+        message = "这个车的续航里程为--->" + str(range)
+        message += "公里"
+        print(message)
